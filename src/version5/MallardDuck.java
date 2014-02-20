@@ -19,38 +19,41 @@ package version5;
  * of polymorphism, dynamically asign a different QuackBehavior
  * implementation at runtime. We'll see this later.
  */
-public class MallardDuck extends FlyAndQuackGroup implements Duck{
+public class MallardDuck implements FlyAndQuackGroup{
 
-    private FlyStrategy flyBehavior;
-    private QuackStrategy quackBehavior;
+    private FlyStrategy flyStrategy;
+    private QuackStrategy quackStrategy;
 
-   
+
+    public MallardDuck(FlyStrategy flyStrategy, QuackStrategy quackStrategy) {
+        this.flyStrategy = flyStrategy;
+        this.quackStrategy = quackStrategy;
+    }
     
-    public void setFlyBehavior(FlyStrategy fb) {
- 		flyBehavior = fb;
-	}
-	
-  public void setQuackBehavior(QuackStrategy qb) {
-		quackBehavior = qb;
-	}
+    @Override
+    public void performFly() {
+       flyStrategy.fly();
+    }
 
+    @Override
+    public void setFlyBehavior(FlyStrategy fly) {
+       this.flyStrategy = flyStrategy;
+    }
+    @Override
+    public void performQuack() {
+       quackStrategy.quack();
+    }
+    @Override
+    public void setQuackBehavior(QuackStrategy quack) {
+        this.quackStrategy = quackStrategy;
+    }
     @Override
     public void display() {
-        System.out.println("I'm a Mallard Duck");
+        System.out.println("I am a Mallard Duck");
     }
-
     @Override
     public void smiw() {
-        System.out.println("I am swimming");
+        System.out.println("I am Swiming");
     }
-    @Override
-    public void performFly(){
-        flyBehavior.fly();
-    }
-    @Override
-     public void performQuack(){
-         quackBehavior.quack();
-     }
-     
+
 }
-       
