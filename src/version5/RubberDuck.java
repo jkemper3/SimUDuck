@@ -1,28 +1,31 @@
 package version5;
 
-public class RubberDuck extends Duck {
+public class RubberDuck implements CanQuackGroup {
 
-    FlyStrategy flyBehavior;
-    QuackStrategy quackBehavior;
+    QuackStrategy quackStrategy;
 
-    public RubberDuck(FlyStrategy flyBehavior, QuackStrategy quackBehavior) {
-        super(flyBehavior, quackBehavior);
+    public RubberDuck(QuackStrategy quackStrategy) {
+        this.quackStrategy = quackStrategy;
     }
 
-
-    public void setFlyBehavior(FlyStrategy flyBehavior) {
-        this.flyBehavior = flyBehavior;
+    public void setQuackBehavior(QuackStrategy quackStrategy) {
+        this.quackStrategy = quackStrategy;
     }
 
-
-    public void setQuackBehavior(QuackStrategy quackBehavior) {
-        this.quackBehavior = quackBehavior;
-    }
-
-   
 
     public void display() {
         System.out.println("I'm a Rubber Duck");
     }
+
+    @Override
+    public void performQuack() {
+        quackStrategy.quack();
+                }
+    @Override
+    public void smiw() {
+        System.out.println("I am a rubber duck, I float");
+    }
+
+    
 
 }

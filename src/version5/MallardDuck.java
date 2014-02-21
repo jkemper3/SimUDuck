@@ -19,7 +19,7 @@ package version5;
  * of polymorphism, dynamically asign a different QuackBehavior
  * implementation at runtime. We'll see this later.
  */
-public class MallardDuck implements FlyAndQuackGroup{
+public class MallardDuck implements CanFlyAndQuackGroup{
 
     private FlyStrategy flyStrategy;
     private QuackStrategy quackStrategy;
@@ -39,10 +39,7 @@ public class MallardDuck implements FlyAndQuackGroup{
     public void setFlyBehavior(FlyStrategy fly) {
        this.flyStrategy = flyStrategy;
     }
-    @Override
-    public void performQuack() {
-       quackStrategy.quack();
-    }
+   
     @Override
     public void setQuackBehavior(QuackStrategy quack) {
         this.quackStrategy = quackStrategy;
@@ -54,6 +51,11 @@ public class MallardDuck implements FlyAndQuackGroup{
     @Override
     public void smiw() {
         System.out.println("I am Swiming");
+    }
+
+    @Override
+    public void performQuack() {
+        quackStrategy.quack();
     }
 
 }
