@@ -14,6 +14,10 @@ public class MiniDuckSimulator {
         rubber.performQuack();
         rubber.smiw();
         
+        Duck vehicle = new WisconsinDellsDuck(new FourWheelDrive());
+        vehicle.display();
+        vehicle.smiw();
+        vehicle.drive();
         
     }
 
