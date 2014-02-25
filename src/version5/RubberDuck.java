@@ -2,7 +2,7 @@ package version5;
 
 public class RubberDuck implements CanQuackGroup {
 
-    QuackStrategy quackStrategy;
+    private QuackStrategy quackStrategy;
 
     public RubberDuck(QuackStrategy quackStrategy) {
         this.quackStrategy = quackStrategy;
@@ -22,7 +22,7 @@ public class RubberDuck implements CanQuackGroup {
         quackStrategy.quack();
                 }
     @Override
-    public void smiw() {
+    public void swim() {
         System.out.println("I am a rubber duck, I float");
     }
 

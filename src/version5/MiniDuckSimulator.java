@@ -7,16 +7,16 @@ public class MiniDuckSimulator {
         mallard.display();
         mallard.performFly();
         mallard.performQuack();
-        mallard.smiw();
+        mallard.swim();
 
         CanQuackGroup rubber = new RubberDuck(new Squeak());
         rubber.display();
         rubber.performQuack();
-        rubber.smiw();
+        rubber.swim();
         
         Duck vehicle = new WisconsinDellsDuck(new FourWheelDrive());
         vehicle.display();
-        vehicle.smiw();
+        vehicle.swim();
         vehicle.drive();
         
     }

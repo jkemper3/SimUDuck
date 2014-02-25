@@ -13,7 +13,7 @@ public interface  Duck {
 	
 	public abstract void display();
         
-        public abstract void smiw();
+        public abstract void swim();
 
 	
 	

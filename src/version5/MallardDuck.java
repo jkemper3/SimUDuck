@@ -49,7 +49,7 @@ public class MallardDuck implements CanFlyAndQuackGroup{
         System.out.println("I am a Mallard Duck");
     }
     @Override
-    public void smiw() {
+    public void swim() {
         System.out.println("I am Swiming");
     }
 

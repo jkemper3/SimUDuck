@@ -32,7 +32,7 @@ public class WisconsinDellsDuck implements Duck,DriveStrategy{
     }
 
     @Override
-    public void smiw() {
+    public void swim() {
         System.out.println("I am a boat I  can swim");
     }
 
